@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>叁级分销佣金计算器</title>
+  <style>
+    ul {
+      list-style-type: none;
+      padding-left: 20px;
+    }
+    li {
+      margin: 5px 0;
+    }
+    .node {
+      font-weight: bold;
+    }
+    .input-node {
+      display: inline-block;
+      width: 150px;
+      margin-right: 10px;
+    }
+    .commission {
+      margin-left: 10px;
+      color: green;
+    }
+    .level1 {
+      padding-left: 0; /* 壹级分销商不缩进 */
+    }
+
+    .level2 {
+      padding-left: 20px; /* 贰级分销商缩进 */
+    }
+
+    .level3 {
+      padding-left: 40px; /* 叁级分销商缩进 */
+    }
+
+  </style>
+</head>
+<body>
+  <h1>叁级分销佣金计算器</h1>
+
+  <!-- 提成比例设置 -->
+  <div>
+    <label>请输入壹级分销商佣金比例（例如 0.1 表示 10%）：</label>
+    <input type="number" id="level1CommissionRate" step="0.01" min="0" value="0.1" onchange="updateCommissions()">
+  </div>
+
+  <div>
+    <label>请输入贰级分销商佣金比例（例如 0.05 表示 5%）：</label>
+    <input type="number" id="level2CommissionRate" step="0.01" min="0" value="0.05" onchange="updateCommissions()">
+  </div>
+
+  <div>
+    <label>请输入叁级分销商佣金比例（例如 0.03 表示 3%）：</label>
+    <input type="number" id="level3CommissionRate" step="0.01" min="0" value="0.03" onchange="updateCommissions()">
+  </div>
+
+  <!-- 壹级分销商输入框 -->
+  <div>
+    <label>请输入壹级分销商数量：</label>
+    <input type="number" id="level1Count" min="1" oninput="addLevel1()">
+  </div>
+
+  <div id="level1Section"></div>
+
+  <h3>树状结构：</h3>
+  <div id="treeDisplay"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
