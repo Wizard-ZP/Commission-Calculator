@@ -14,6 +14,9 @@
 
 以下是一个实际的使用案例：
 
+### 界面预览
+![分销佣金计算器界面](pic.png)
+
 ### 佣金比例设置
 - 一级分销商：10% (0.1)
 - 二级分销商：5% (0.05)
@@ -57,7 +60,7 @@
 ## 安装说明
 1. 克隆项目到本地：
    ```bash
-   git clone https://github.com/username/commission-calculator.git
+   git clone https://github.com/Wizard-ZP/Commission-Calculator.git
    ```
 2. 直接打开 `index.html` 文件即可使用
 
